@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flasher - Flashcard App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login/Signup Section -->
+    <div id="auth-section" class="auth-section">
+      <h1>Flasher</h1>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+      </form>
+      <form id="signup-form" class="hidden">
+        <input type="text" id="new-username" placeholder="Username" required>
+        <input type="password" id="new-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+      </form>
+    </div>
+
+    <!-- Main App Section -->
+    <div id="app-section" class="hidden">
+      <header>
+        <h1>Flasher</h1>
+        <nav>
+          <button id="study-mode">Study Mode</button>
+          <button id="create-flashcard">Create Flashcard</button>
+          <button id="settings">Settings</button>
+          <button id="logout">Logout</button>
+        </nav>
+      </header>
+
+      <!-- Flashcard Creation -->
+      <div id="create-section" class="hidden">
+        <h2>Create Flashcard</h2>
+        <form id="flashcard-form">
+          <input type="text" id="question" placeholder="Question" required>
+          <textarea id="answer" placeholder="Answer" required></textarea>
+          <button type="submit">Save Flashcard</button>
+        </form>
+      </div>
+
+      <!-- Study Mode -->
+      <div id="study-section" class="hidden">
+        <h2>Study Mode</h2>
+        <div id="flashcard-display">
+          <div id="flashcard">
+            <p id="flashcard-question"></p>
+            <p id="flashcard-answer" class="hidden"></p>
+          </div>
+          <button id="flip-card">Flip Card</button>
+          <button id="next-card">Next Card</button>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div id="settings-section" class="hidden">
+        <h2>Settings</h2>
+        <form id="theme-settings">
+          <label>
+            <input type="radio" name="theme" value="light" checked> Light Theme
+          </label>
+          <label>
+            <input type="radio" name="theme" value="dark"> Dark Theme
+          </label>
+        </form>
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
